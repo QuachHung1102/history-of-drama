@@ -1,0 +1,257 @@
+/* ===== MAIN IMAGE ===== */
+.main-image {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ===== INTRO SECTION ===== */
+.intro-section {
+  width: 90%;
+  max-width: 1440px;
+  margin: 1.5rem auto;
+  padding: 0.75rem;
+}
+
+.intro-text {
+  word-wrap: break-word;
+  max-width: 100%;
+  word-break: break-word;
+  hyphens: none;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-playfair), serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.author-name {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: var(--font-afacad), sans-serif;
+}
+
+/* ===== REPRESENTATIVE WORKS ===== */
+.representative-works-content {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile: 1 cột */
+  gap: 0;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 1440px;
+  border: 1px solid #000;
+  overflow: hidden;
+}
+
+.representative-left {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* Tạo hình vuông bằng padding trick */
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.representative-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.representative-right {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 1.25rem;
+  min-height: 300px;
+}
+
+.representative-title {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.3;
+  width: 100%;
+}
+
+.representative-description {
+  font-family: var(--font-comfortaa), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: justify;
+  width: 100%;
+}
+
+.representative-description:first-of-type {
+  margin-bottom: 1rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Small Mobile - 480px and up */
+@media (min-width: 480px) {
+  .intro-text {
+    font-size: 1.5rem;
+  }
+
+  .author-name {
+    font-size: 0.95rem;
+  }
+
+  .representative-title {
+    font-size: 1.125rem;
+  }
+}
+
+/* Tablet - 768px and up */
+@media (min-width: 768px) {
+  .intro-section {
+    width: 85%;
+    margin: 2.5rem auto;
+    padding: 1rem;
+  }
+
+  .intro-text {
+    font-size: 1.875rem;
+    max-width: 400px;
+    margin-bottom: 2.5rem;
+  }
+
+  .author-name {
+    font-size: 1.05rem;
+  }
+
+  .representative-works-content {
+    width: 85%;
+    margin: 3rem auto;
+  }
+
+  .representative-right {
+    padding: 2rem;
+    min-height: 350px;
+  }
+
+  .representative-title {
+    font-size: 1.375rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .representative-description:first-of-type {
+    margin-bottom: 1.25rem;
+  }
+}
+
+/* Desktop - 1024px and up */
+@media (min-width: 1024px) {
+  .intro-section {
+    width: 75%;
+    margin: 3.5rem auto;
+  }
+
+  .intro-text {
+    font-size: 2.25rem;
+    max-width: 500px;
+    margin-bottom: 3.5rem;
+  }
+
+  .author-name {
+    font-size: 1.15rem;
+  }
+
+  .representative-works-content {
+    grid-template-columns: 1fr 1fr; /* Desktop: 2 cột bằng nhau */
+    width: 80%;
+    margin: 4rem auto;
+  }
+
+  .representative-left {
+    padding-bottom: 100%; /* Giữ hình vuông */
+  }
+
+  .representative-right {
+    padding: 2.5rem;
+    min-height: auto;
+    height: 100%; /* Chiều cao bằng với left */
+  }
+
+  .representative-title {
+    font-size: 1.5rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .representative-description:first-of-type {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Large Desktop - 1280px and up */
+@media (min-width: 1280px) {
+  .intro-section {
+    width: 70%;
+    margin: 4rem auto;
+  }
+
+  .intro-text {
+    font-size: 2.625rem;
+    max-width: 550px;
+    margin-bottom: 4rem;
+  }
+
+  .author-name {
+    font-size: 1.25rem;
+  }
+
+  .representative-works-content {
+    width: 75%;
+    margin: 4.5rem auto;
+  }
+
+  .representative-right {
+    padding: 3rem;
+  }
+
+  .representative-title {
+    font-size: 1.75rem;
+    margin-bottom: 2.75rem;
+  }
+}
+
+/* Extra Large Desktop - 1440px and up */
+@media (min-width: 1440px) {
+  .intro-section {
+    width: 70%;
+    margin: 5rem auto;
+  }
+
+  .intro-text {
+    font-size: 3rem;
+    max-width: 600px;
+    margin-bottom: 5rem;
+  }
+
+  .representative-works-content {
+    width: 70%;
+    margin: 5rem auto;
+  }
+
+  .representative-right {
+    padding: 3.5rem;
+  }
+
+  .representative-title {
+    font-size: 2rem;
+    margin-bottom: 3.5rem;
+  }
+  .representative-description:first-of-type {
+    margin-bottom: 1.75rem;
+  }
+}

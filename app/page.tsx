@@ -1,65 +1,44 @@
 import Image from "next/image";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import './styles/layout.css'
+import './styles/home.css'
+import backgroundImage from '../public/images/intro-bg.png';
+import representativeImg from '../public/images/representative-works-img.png';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="">
+      <Header />
+      <main className="main-content">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+          src={backgroundImage}
+          alt="Drama Stage"
+          className="main-image"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        <section className="intro-section">
+          <h2 className="intro-text">Japanese “Six” Makes West End History</h2>
+          <p className="author-name">- By John Doe</p>
+        </section>
+        <section className="representative-works">
+          <div className="representative-works-content">
+            <div className="representative-left">
+              <Image
+                src={representativeImg}
+                alt="Representative Work 1"
+                className="representative-image"
+              />
+            </div>
+            <div className="representative-right">
+              <h2 className="representative-title">Japanese “Six” Makes West End History</h2>
+              <p className="representative-description">Recently, the Japanese-language production of Six - the hit musical retelling the stories of Henry VIII’s six wives - officially opened at London’s Vaudeville Theatre, marking the first time a non-English version of a musical has become a resident show in the West End. This moment signals more than a linguistic milestone; it represents a broader movement toward the globalization of musical theatre, where productions are increasingly designed to reach multilingual and multicultural audiences.</p>
+              <p className="representative-description">What’s striking is that the entire cast is Japanese, with English surtitles projected for international audiences - creating a fascinating “cross-border adaptation” that bridges not only languages but also cultures. Japanese audiences can now experience Six in their native tongue, while visitors in London witness a reimagined version of a traditionally British musical through a distinctly local lens. This experiment hints at a growing trend: the transformation of musical theatre from a nationally rooted art form into a global medium that both preserves its cultural origins and seeks new audiences abroad.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
+      <Footer />
     </div>
   );
 }

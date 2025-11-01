@@ -1,0 +1,379 @@
+/* Composer Detail Page Styles */
+.composer-detail-container {
+  min-height: 60vh;
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #f9f9f9 0%, #ffffff 100%);
+}
+
+.composer-detail-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  margin-bottom: 2rem;
+  font-family: var(--font-comfortaa), sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.breadcrumb-link {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #666;
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  margin: 0 0.5rem;
+}
+
+.breadcrumb-current {
+  color: #999;
+}
+
+/* Header Section */
+.composer-detail-header {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.composer-detail-avatar-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.composer-detail-avatar {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.composer-detail-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0.5rem 0;
+  gap: 1rem;
+}
+
+.composer-detail-name {
+  font-family: var(--font-playfair), serif;
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.composer-detail-era {
+  font-family: var(--font-alegreya), serif;
+  font-size: 2rem;
+  color: #666;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Awards Badges */
+.composer-awards-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.award-badge {
+  font-family: var(--font-comfortaa), sans-serif;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #C84B31 0%, #8B3A3A 100%);
+  color: #fff;
+  border-radius: 20px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(200, 75, 49, 0.3);
+}
+
+/* Section Styles */
+.composer-section {
+  margin-bottom: 3rem;
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.section-title {
+  font-family: var(--font-alegreya), serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  border-left: 4px solid #000;
+  padding-left: 1rem;
+}
+
+.section-text {
+  font-family: var(--font-comfortaa), sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #333;
+  text-align: justify;
+}
+
+/* Representative Works Grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.work-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+  padding: 1.75rem;
+  border-radius: 12px;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-color: #d0d0d0;
+}
+
+.work-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.work-title {
+  font-family: var(--font-alegreya), serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  flex: 1;
+}
+
+.work-year {
+  font-family: var(--font-comfortaa), sans-serif;
+  font-size: 0.95rem;
+  color: #fff;
+  background: #000;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.work-description {
+  font-family: var(--font-comfortaa), sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* Awards List */
+.awards-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.award-item {
+  font-family: var(--font-comfortaa), sans-serif;
+  font-size: 1.05rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+  border-radius: 8px;
+  color: #2d3436;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(253, 203, 110, 0.3);
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.award-item::before {
+  content: "🏆";
+  position: absolute;
+  left: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Back Buttons */
+.back-button,
+.back-button-bottom {
+  display: inline-block;
+  font-family: var(--font-comfortaa), sans-serif;
+  font-size: 1rem;
+  padding: 0.875rem 2rem;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.back-button-bottom {
+  margin-top: 2rem;
+}
+
+.back-button:hover,
+.back-button-bottom:hover {
+  background: #333;
+  transform: translateX(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Not Found Styles */
+.not-found-title {
+  font-family: var(--font-playfair), serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #1a1a1a;
+}
+
+.not-found-text {
+  font-family: var(--font-comfortaa), sans-serif;
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .composer-detail-header {
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+  }
+
+  .composer-detail-name {
+    font-size: 2.5rem;
+  }
+
+  .composer-detail-era {
+    font-size: 1.2rem;
+  }
+
+  .works-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .composer-detail-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .composer-detail-header {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .composer-detail-avatar-container {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .composer-detail-info {
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .composer-detail-name {
+    font-size: 2rem;
+  }
+
+  .composer-detail-era {
+    font-size: 1.15rem;
+  }
+
+  .composer-awards-badges {
+    justify-content: center;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-text {
+    font-size: 1rem;
+  }
+
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .composer-section {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .composer-detail-container {
+    padding: 2rem 1rem;
+  }
+
+  .composer-detail-header {
+    padding: 1.5rem;
+  }
+
+  .composer-detail-name {
+    font-size: 1.75rem;
+  }
+
+  .composer-detail-era {
+    font-size: 1rem;
+  }
+
+  .award-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    padding-left: 0.75rem;
+  }
+
+  .section-text {
+    font-size: 0.95rem;
+  }
+
+  .composer-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .work-card {
+    padding: 1.25rem;
+  }
+
+  .work-title {
+    font-size: 1.15rem;
+  }
+
+  .work-year {
+    font-size: 0.85rem;
+    padding: 0.2rem 0.6rem;
+  }
+}

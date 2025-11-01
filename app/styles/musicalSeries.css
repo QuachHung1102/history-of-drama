@@ -1,0 +1,849 @@
+/* Musical Series Page Styles */
+
+.musical-series-container {
+  min-height: 100vh;
+  background-color: #f5f5f0;
+  padding-bottom: 4rem;
+}
+
+/* Header */
+.musical-series-header {
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+  background-color: #f5f5f0;
+  animation: headerSlideDown 0.8s ease-out;
+}
+
+@keyframes headerSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.musical-series-title {
+  font-family: var(--font-title, 'Playfair Display', serif);
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: #1a1a1a;
+  margin: 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #C84B31 50%, #1a1a1a 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+/* Navigation Pills */
+.musical-nav-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 2rem 1rem;
+  background-color: #f5f5f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid #ddd;
+  backdrop-filter: blur(10px);
+  background: rgba(245, 245, 240, 0.95);
+  animation: navSlideDown 0.6s ease-out 0.3s backwards;
+}
+
+@keyframes navSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-pill {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #1a1a1a;
+  border-radius: 25px;
+  background-color: #ffffff;
+  font-family: var(--font-body, 'Comfortaa', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-pill::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(200, 75, 49, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.nav-pill:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.nav-pill:hover {
+  background-color: #8B3A3A;
+  color: #ffffff;
+  border-color: #8B3A3A;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(139, 58, 58, 0.4);
+}
+
+.nav-pill.active {
+  background-color: #C84B31;
+  color: #ffffff;
+  border-color: #C84B31;
+  box-shadow: 0 4px 15px rgba(200, 75, 49, 0.5);
+  animation: pillPulse 2s ease-in-out infinite;
+}
+
+@keyframes pillPulse {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(200, 75, 49, 0.5);
+  }
+  50% {
+    box-shadow: 0 6px 25px rgba(200, 75, 49, 0.7);
+  }
+}
+
+/* Content Sections */
+.musical-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 5rem 2rem 0;
+}
+
+.musical-era-section {
+  position: relative;
+  margin-bottom: 4rem;
+  padding-left: 60px;
+  opacity: 0;
+  animation: sectionFadeIn 0.8s ease-out forwards;
+}
+
+.musical-era-section:nth-child(1) { animation-delay: 0.1s; }
+.musical-era-section:nth-child(2) { animation-delay: 0.2s; }
+.musical-era-section:nth-child(3) { animation-delay: 0.3s; }
+.musical-era-section:nth-child(4) { animation-delay: 0.4s; }
+.musical-era-section:nth-child(5) { animation-delay: 0.5s; }
+.musical-era-section:nth-child(6) { animation-delay: 0.6s; }
+.musical-era-section:nth-child(7) { animation-delay: 0.7s; }
+.musical-era-section:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes sectionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Left Sidebar Label */
+.era-sidebar-label {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 50px;
+  height: auto;
+  background: linear-gradient(180deg, #C84B31 0%, #8B3A3A 100%);
+  border-radius: 8px;
+  padding: 1rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(200, 75, 49, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.era-sidebar-label:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 6px 25px rgba(200, 75, 49, 0.5);
+}
+
+.era-sidebar-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-title, 'Playfair Display', serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Content */
+.era-main-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.era-main-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #C84B31 0%, #8B3A3A 50%, #C84B31 100%);
+  background-size: 200% auto;
+  animation: gradientFlow 3s linear infinite;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.era-main-content:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Header Section */
+.era-header-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: start;
+}
+
+.era-header-text {
+  padding-right: 1rem;
+}
+
+.era-title {
+  font-family: var(--font-title, 'Playfair Display', serif);
+  font-size: 3rem;
+  font-weight: 900;
+  color: #C84B31;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #C84B31 0%, #8B3A3A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titleSlideIn 0.6s ease-out;
+  position: relative;
+}
+
+@keyframes titleSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.era-period {
+  font-family: var(--font-section, 'Alegreya', serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+  animation: titleSlideIn 0.6s ease-out 0.1s backwards;
+}
+
+.era-characteristics {
+  font-family: var(--font-body, 'Comfortaa', sans-serif);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+  margin: 0;
+  animation: titleSlideIn 0.6s ease-out 0.2s backwards;
+}
+
+.era-header-image {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 400px;
+  height: 300px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  animation: imageZoomIn 0.6s ease-out 0.3s backwards;
+}
+
+@keyframes imageZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.era-header-image::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #C84B31, #8B3A3A, #C84B31);
+  background-size: 300% 300%;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: -1;
+  animation: gradientRotate 3s linear infinite;
+}
+
+@keyframes gradientRotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.era-header-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(200, 75, 49, 0.3);
+}
+
+.era-header-image:hover::before {
+  opacity: 1;
+}
+
+.era-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+}
+
+.era-header-image:hover .era-poster {
+  transform: scale(1.05);
+}
+
+/* Vocal Techniques Section */
+.vocal-techniques-section {
+  margin: 2.5rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid #ddd;
+}
+
+.vocal-techniques-title {
+  font-family: var(--font-section, 'Alegreya', serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+}
+
+.vocal-techniques-content {
+  font-family: var(--font-body, 'Comfortaa', sans-serif);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.vocal-techniques-content p {
+  margin: 0.5rem 0;
+}
+
+/* Representative Works */
+.representative-works-section {
+  margin-top: 2.5rem;
+}
+
+.works-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.representative-works-title {
+  font-family: var(--font-title, 'Playfair Display', serif);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #C84B31;
+  margin: 0;
+  background: linear-gradient(135deg, #C84B31 0%, #8B3A3A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  display: inline-block;
+}
+
+.representative-works-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #C84B31, #8B3A3A);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.representative-works-section:hover .representative-works-title::after {
+  width: 100%;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #C84B31;
+  background-color: #fff;
+  color: #C84B31;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(200, 75, 49, 0.3) 0%, transparent 70%);
+  transform: scale(0);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-btn:hover::before {
+  transform: scale(1);
+}
+
+.carousel-btn svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background-color: #C84B31;
+  color: #fff;
+  transform: scale(1.15);
+  box-shadow: 0 4px 20px rgba(200, 75, 49, 0.4);
+}
+
+.carousel-btn:hover svg {
+  transform: translateX(0);
+  animation: arrowBounce 0.6s ease-in-out infinite;
+}
+
+.carousel-prev:hover svg {
+  animation: arrowBounceLeft 0.6s ease-in-out infinite;
+}
+
+@keyframes arrowBounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+}
+
+@keyframes arrowBounceLeft {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-3px);
+  }
+}
+
+.carousel-btn:active {
+  transform: scale(0.95);
+}
+
+.carousel-counter {
+  font-family: var(--font-body, 'Comfortaa', sans-serif);
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.works-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  transition: transform 0.4s ease-in-out;
+}
+
+.work-card {
+  text-align: center;
+  animation: fadeInUp 0.6s ease-out backwards;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.work-card:nth-child(1) { animation-delay: 0.1s; }
+.work-card:nth-child(2) { animation-delay: 0.2s; }
+.work-card:nth-child(3) { animation-delay: 0.3s; }
+
+.work-card:hover {
+  transform: translateY(-8px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.work-image-placeholder {
+  width: 100%;
+  aspect-ratio: 2/3;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.work-image-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #C84B31, #8B3A3A, #C84B31, #8B3A3A);
+  background-size: 300% 300%;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: -1;
+  animation: gradientRotate 4s linear infinite;
+}
+
+.work-card:hover .work-image-placeholder {
+  box-shadow: 0 8px 30px rgba(200, 75, 49, 0.3);
+}
+
+.work-card:hover .work-image-placeholder::before {
+  opacity: 1;
+}
+
+.work-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+}
+
+.work-card:hover .work-image {
+  transform: scale(1.05) rotate(1deg);
+}
+
+.work-title {
+  font-family: var(--font-body, 'Comfortaa', sans-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.work-card:hover .work-title {
+  color: #C84B31;
+  transform: scale(1.05);
+}
+
+.work-year {
+  display: block;
+  font-family: var(--font-body, 'Comfortaa', sans-serif);
+  font-size: 0.85rem;
+  color: #999;
+  text-align: center;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+.work-card:hover .work-year {
+  color: #8B3A3A;
+}
+
+/* Separator */
+.era-separator {
+  border: none;
+  border-top: 2px solid #ddd;
+  margin: 2.5rem 0 0 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .musical-series-title {
+    font-size: 2.8rem;
+  }
+
+  .musical-nav-pills {
+    padding: 1.5rem 1.5rem 2rem;
+    gap: 0.75rem;
+    max-height: 160px;
+  }
+
+  .nav-pill {
+    font-size: 0.85rem;
+    padding: 0.65rem 1.2rem;
+  }
+
+  .era-header-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .era-header-image {
+    max-width: 500px;
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
+  }
+
+  .era-title {
+    font-size: 2.5rem;
+  }
+
+  .nav-pill {
+    font-size: 0.85rem;
+    padding: 0.65rem 1.2rem;
+  }
+
+  .musical-era-section {
+    padding-left: 50px;
+  }
+
+  .era-sidebar-label {
+    width: 45px;
+  }
+
+  .works-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .carousel-controls {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .representative-works-title {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .musical-series-title {
+    font-size: 2.2rem;
+  }
+
+  .musical-nav-pills {
+    gap: 0.5rem;
+    padding: 1rem 1rem 1.5rem;
+    max-height: 140px;
+  }
+
+  .nav-pill {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.9rem;
+  }
+
+  .musical-content {
+    padding: 0 1rem;
+  }
+
+  .musical-era-section {
+    padding-left: 0;
+  }
+
+  .era-sidebar-label {
+    display: none;
+  }
+
+  .era-main-content {
+    padding: 1.5rem;
+  }
+
+  .era-title {
+    font-size: 2rem;
+  }
+
+  .era-period {
+    font-size: 1.2rem;
+  }
+
+  .era-header-image {
+    height: 280px;
+  }
+
+  .representative-works-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .carousel-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .carousel-counter {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .musical-series-title {
+    font-size: 1.8rem;
+  }
+
+  .musical-nav-pills {
+    gap: 0.4rem;
+    padding: 0.75rem 0.5rem 1rem;
+    max-height: 120px;
+  }
+
+  .nav-pill {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.75rem;
+    border-width: 1.5px;
+  }
+
+  .musical-content {
+    padding: 0 0.75rem;
+  }
+
+  .era-main-content {
+    padding: 1rem;
+  }
+
+  .era-title {
+    font-size: 1.6rem;
+  }
+
+  .era-period {
+    font-size: 1.1rem;
+  }
+
+  .era-header-image {
+    height: 250px;
+  }
+
+  .vocal-techniques-title {
+    font-size: 1.3rem;
+  }
+
+  .representative-works-title {
+    font-size: 1.6rem;
+  }
+
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .carousel-counter {
+    font-size: 0.8rem;
+  }
+}

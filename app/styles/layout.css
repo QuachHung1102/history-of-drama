@@ -1,0 +1,79 @@
+/* reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px; /* Base size cho mobile */
+  overflow-y: scroll; /* Luôn hiển thị vùng scroll để tránh layout shift */
+  
+  /* Ẩn scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Ẩn scrollbar cho Chrome, Safari và Opera */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: var(--font-playfair), serif;
+  color: #000;
+  background-color: #ffffff;
+  overflow-x: hidden; /* Ẩn scroll ngang */
+}
+
+h1 {
+  font-size: 1.75rem; /* Responsive base */
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: var(--font-alegreya), serif;
+  font-weight: 400;
+  font-size: 1.5rem; /* Responsive base */
+  text-transform: uppercase;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.875rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 2.25rem;
+  }
+  
+  h2 {
+    font-size: 2.25rem;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+

@@ -1,0 +1,203 @@
+/* Vietnam Timeline - Vertical Layout */
+.vietnam-timeline-container {
+  position: relative;
+  padding: 4rem 2rem;
+  background-color: #FFF9F2;
+}
+
+/* Vertical Line */
+.vietnam-timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #c41e3a 0%, #c41e3a 100%);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Timeline Item Container */
+.vietnam-timeline-item {
+  position: relative;
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Alternating Layout */
+.vietnam-timeline-item:nth-child(odd) .timeline-item-content {
+  margin-right: calc(50% + 3rem);
+  text-align: right;
+}
+
+.vietnam-timeline-item:nth-child(even) .timeline-item-content {
+  margin-left: calc(50% + 3rem);
+  text-align: left;
+}
+
+/* Timeline Content Box */
+.timeline-item-content {
+  background: #fff;
+  border: 2px solid #c41e3a;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(196, 30, 58, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.timeline-item-content:hover {
+  box-shadow: 0 8px 25px rgba(196, 30, 58, 0.25);
+  transform: translateY(-5px);
+}
+
+/* Phase Title */
+.timeline-phase-title {
+  font-family: var(--font-alegreya), serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #c41e3a;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+/* Year Range */
+.timeline-year-range {
+  font-family: var(--font-comfortaa), sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+/* Preview Text */
+.timeline-preview {
+  font-family: var(--font-comfortaa), sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Center Circle/Dot */
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  background-color: #c41e3a;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(196, 30, 58, 0.2);
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.vietnam-timeline-item:hover .timeline-dot {
+  transform: translate(-50%, -50%) scale(1.3);
+  box-shadow: 0 0 0 6px rgba(196, 30, 58, 0.3);
+}
+
+/* Composers Section */
+.timeline-composers {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.timeline-composers-title {
+  font-family: var(--font-alegreya), serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #c41e3a;
+  margin-bottom: 1rem;
+}
+
+.composer-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.composer-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #c41e3a;
+}
+
+.composer-info {
+  flex: 1;
+}
+
+.composer-name {
+  font-family: var(--font-alegreya), serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.composer-work {
+  font-family: var(--font-comfortaa), sans-serif;
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vietnam-timeline-line {
+    left: 30px;
+  }
+
+  .vietnam-timeline-item:nth-child(odd) .timeline-item-content,
+  .vietnam-timeline-item:nth-child(even) .timeline-item-content {
+    margin-left: 70px;
+    margin-right: 0;
+    text-align: left;
+    max-width: calc(100% - 70px);
+  }
+
+  .timeline-dot {
+    left: 30px;
+  }
+
+  .timeline-phase-title {
+    font-size: 1.25rem;
+  }
+
+  .timeline-year-range {
+    font-size: 1rem;
+  }
+
+  .timeline-preview {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vietnam-timeline-container {
+    padding: 2rem 1rem;
+  }
+
+  .timeline-item-content {
+    padding: 1.5rem;
+  }
+
+  .timeline-phase-title {
+    font-size: 1.1rem;
+  }
+}

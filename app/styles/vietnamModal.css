@@ -1,0 +1,264 @@
+/* Vietnam Modal Overlay */
+.vietnam-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Vietnam Modal Content */
+.vietnam-modal-content {
+  background-color: #fff;
+  border: 3px solid #c41e3a;
+  border-radius: 12px;
+  width: 900px;
+  height: 650px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 3rem 3rem;
+  position: relative;
+  box-shadow: 0 10px 50px rgba(196, 30, 58, 0.4);
+  animation: slideIn 0.3s ease-out;
+  
+  /* Ẩn scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.vietnam-modal-content::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Close Button */
+.vietnam-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: #c41e3a;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.vietnam-modal-close:hover {
+  background-color: rgba(196, 30, 58, 0.1);
+  transform: rotate(90deg);
+}
+
+/* Modal Header */
+.vietnam-modal-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #c41e3a;
+}
+
+.vietnam-modal-title {
+  color: #c41e3a;
+  font-family: var(--font-alegreya), serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.vietnam-modal-year-range {
+  color: #333;
+  font-family: var(--font-comfortaa), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Modal Body */
+.vietnam-modal-body {
+  color: #333;
+  font-family: var(--font-comfortaa), sans-serif;
+  line-height: 1.8;
+}
+
+.vietnam-paragraph {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  text-align: justify;
+  color: #333;
+  font-family: var(--font-comfortaa), sans-serif;
+}
+
+/* Section Title (như "Key milestones:", "Notable composers and works:") */
+.vietnam-section-title {
+  color: #c41e3a;
+  font-family: var(--font-alegreya), serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(196, 30, 58, 0.3);
+}
+
+/* Milestone Item - ĐẶC BIỆT */
+.vietnam-milestone {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+  border-left: 4px solid #c41e3a;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(196, 30, 58, 0.1);
+  transition: all 0.3s ease;
+}
+
+.vietnam-milestone:hover {
+  box-shadow: 0 4px 15px rgba(196, 30, 58, 0.2);
+  transform: translateX(5px);
+}
+
+/* Year - ĐẶC BIỆT QUAN TRỌNG */
+.milestone-year {
+  flex-shrink: 0;
+  min-width: 120px;
+  font-family: var(--font-alegreya), serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #c41e3a;
+  text-align: center;
+  padding: 0.75rem;
+  background: #fff;
+  border: 2px solid #c41e3a;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(196, 30, 58, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Content của milestone */
+.milestone-content {
+  flex: 1;
+  font-family: var(--font-comfortaa), sans-serif;
+  font-size: 1.05rem;
+  color: #222;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+}
+
+/* Work Item (composer: work) */
+.vietnam-work-item {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+  font-family: var(--font-comfortaa), sans-serif;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+.vietnam-work-item strong {
+  color: #c41e3a;
+  font-weight: 700;
+  font-family: var(--font-alegreya), serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vietnam-modal-content {
+    width: 90vw;
+    height: 75vh;
+    padding: 2rem 1.5rem;
+  }
+
+  .vietnam-modal-title {
+    font-size: 1.5rem;
+  }
+
+  .vietnam-modal-year-range {
+    font-size: 1.1rem;
+  }
+
+  .vietnam-section-title {
+    font-size: 1.2rem;
+  }
+
+  .vietnam-milestone {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .milestone-year {
+    min-width: auto;
+    width: 100%;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+  }
+
+  .milestone-content {
+    font-size: 0.95rem;
+  }
+
+  .vietnam-paragraph {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vietnam-modal-content {
+    width: 95vw;
+    height: 85vh;
+    padding: 1.5rem 1rem;
+  }
+
+  .vietnam-modal-title {
+    font-size: 1.25rem;
+  }
+
+  .vietnam-modal-year-range {
+    font-size: 1rem;
+  }
+
+  .milestone-year {
+    font-size: 1.1rem;
+  }
+
+  .milestone-content {
+    font-size: 0.9rem;
+  }
+}
