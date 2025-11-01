@@ -185,3 +185,149 @@
 .footer {
   margin-top: 0 !important;
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .timeline-nav {
+    column-gap: 3rem;
+    padding-right: 5rem;
+    top: 3%;
+  }
+
+  .nav-item {
+    font-size: 1.6rem;
+  }
+
+  .circle {
+    width: 26px;
+    height: 26px;
+  }
+
+  .circle-number {
+    line-height: 26px;
+    font-size: 0.9rem;
+  }
+
+  .circle-title,
+  .circle-title-1l,
+  .circle-title-1r {
+    font-size: 0.9rem;
+  }
+
+  .circle-description {
+    font-size: 0.75rem;
+    width: 130px;
+    bottom: -40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-nav {
+    column-gap: 2rem;
+    padding: 1rem 1rem;
+    padding-right: 2rem;
+    top: 2%;
+  }
+
+  .nav-item {
+    font-size: 1.3rem;
+  }
+
+  .nav-item::after {
+    height: 3px;
+    bottom: -8px;
+  }
+
+  .threadtime {
+    width: 85%;
+    top: 15%;
+  }
+
+  .circle {
+    width: 24px;
+    height: 24px;
+    top: -10px;
+  }
+
+  .circle-number {
+    line-height: 24px;
+    font-size: 0.85rem;
+  }
+
+  .circle-title,
+  .circle-title-1l,
+  .circle-title-1r {
+    font-size: 0.8rem;
+  }
+
+  .circle-description {
+    font-size: 0.7rem;
+    width: 120px;
+    bottom: -38px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-nav {
+    flex-direction: column;
+    column-gap: 0;
+    row-gap: 1rem;
+    padding: 0.75rem;
+    padding-right: 1rem;
+    align-items: flex-end;
+    top: 1.5%;
+  }
+
+  .nav-item {
+    font-size: 1.1rem;
+  }
+
+  .nav-item::after {
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+  }
+
+  .threadtime {
+    width: 80%;
+    top: 20%;
+  }
+
+  .circle {
+    width: 20px;
+    height: 20px;
+    top: -9px;
+  }
+
+  .circle-number {
+    line-height: 20px;
+    font-size: 0.75rem;
+  }
+
+  .circle-title,
+  .circle-title-1l,
+  .circle-title-1r {
+    font-size: 0.7rem;
+    transform: translate(-50%, -120%);
+  }
+
+  .circle-title-1l {
+    transform: translate(-105%, -120%);
+  }
+
+  .circle-title-1r {
+    transform: translate(30%, -120%);
+  }
+
+  .circle-description {
+    font-size: 0.65rem;
+    width: 100px;
+    bottom: -35px;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .circle:hover {
+    transform: scale(1.15);
+  }
+}

@@ -4,18 +4,20 @@ import { musicalEras } from '../lib/musicalData';
 import Image from 'next/image';
 import { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowRight, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../styles/musicalSeries.css';
 
 export default function MusicalSeriesPage() {
   const [activeEra, setActiveEra] = useState('operetta');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({});
   const [carouselIndexes, setCarouselIndexes] = useState<{ [key: string]: number }>({});
 
   const scrollToSection = (eraId: string) => {
     setActiveEra(eraId);
+    setIsMenuOpen(false); // Close menu after selection
     const section = sectionsRef.current[eraId];
     if (section) {
       const navHeight = 200; // Height of navigation pills
@@ -63,15 +65,27 @@ export default function MusicalSeriesPage() {
 
         {/* Navigation Pills */}
         <nav className="musical-nav-pills">
-          {musicalEras.map((era) => (
-            <button
-              key={era.id}
-              className={`nav-pill ${activeEra === era.id ? 'active' : ''}`}
-              onClick={() => scrollToSection(era.id)}
-            >
-              {era.title}
-            </button>
-          ))}
+          <button 
+            className="nav-toggle-btn"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle navigation menu"
+          >
+            <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
+            <span className="nav-toggle-text">
+              {isMenuOpen ? 'Close Menu' : 'Musical Eras Menu'}
+            </span>
+          </button>
+          <div className={`nav-pills-container ${isMenuOpen ? 'open' : ''}`}>
+            {musicalEras.map((era) => (
+              <button
+                key={era.id}
+                className={`nav-pill ${activeEra === era.id ? 'active' : ''}`}
+                onClick={() => scrollToSection(era.id)}
+              >
+                {era.title}
+              </button>
+            ))}
+          </div>
         </nav>
 
         {/* Content Sections */}
