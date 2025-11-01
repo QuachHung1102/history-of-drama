@@ -79,9 +79,9 @@ const timelineContent: Record<string, { title: string; content: string }> = {
 };
 
 // Dữ liệu Vietnam Timeline
-const vietnamTimelineData: Record<string, { 
-  title: string; 
-  yearRange: string; 
+const vietnamTimelineData: Record<string, {
+  title: string;
+  yearRange: string;
   content: string;
   composers?: { name: string; work: string; avatar?: string }[];
 }> = {
@@ -121,9 +121,9 @@ Nhật Lai: Bên bờ Krông Pa (By the Krông Pa River) — a three-act opera d
 
 Challenges: The development of opera during this period was hindered by war disruptions and a lack of infrastructure. While the North focused on revolutionary themes, the South experimented with more diverse forms but was heavily influenced by American culture.`,
     composers: [
-      { name: "Đỗ Nhuận", work: "Cô Sao (a three-act opera about a young Thái ethnic woman's journey)", avatar: "/images/composers/do-nhuan.jpg" },
-      { name: "Hoàng Việt", work: "Bông Sen (a one-act opera centered on rural life)", avatar: "/images/composers/hoang-viet.jpg" },
-      { name: "Nhật Lai", work: "Bên bờ Krông Pa (a three-act opera depicting the Southern uprisings)", avatar: "/images/composers/nhat-lai.jpg" }
+      { name: "Đỗ Nhuận", work: "Cô Sao (a three-act opera about a young Thái ethnic woman's journey)", avatar: "/images/composers/vietnam/do-nhuan.jpg" },
+      { name: "Hoàng Việt", work: "Bông Sen (a one-act opera centered on rural life)", avatar: "/images/composers/vietnam/hoang-viet.jpg" },
+      { name: "Nhật Lai", work: "Bên bờ Krông Pa (a three-act opera depicting the Southern uprisings)", avatar: "/images/composers/vietnam/nhat-lai.jpg" }
     ]
   },
   "vn-phase-3": {
@@ -312,7 +312,7 @@ export default function TimelinePage() {
                 <div className="vietnam-timeline-container">
                   {/* Vertical Line */}
                   <div className="vietnam-timeline-line"></div>
-                  
+
                   {/* Phase 1 */}
                   <div className="vietnam-timeline-item" onClick={() => handleEventClick("vn-phase-1")}>
                     <div className="timeline-dot"></div>
@@ -340,8 +340,8 @@ export default function TimelinePage() {
                           {vietnamTimelineData["vn-phase-2"].composers?.map((composer, idx) => (
                             <div key={idx} className="composer-item">
                               {composer.avatar && (
-                                <Image 
-                                  src={composer.avatar} 
+                                <Image
+                                  src={composer.avatar}
                                   alt={composer.name}
                                   width={50}
                                   height={50}
